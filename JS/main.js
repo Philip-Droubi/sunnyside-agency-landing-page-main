@@ -57,8 +57,10 @@ function berg() {
 }
 
 document.addEventListener('click', event => {
-    const isClickInside = bergIcon.contains(event.target) || mobileNavMenu.contains(event.target);
-    if (!isClickInside) berg();
+    if (bergStatues) {
+        const isClickInside = bergIcon.contains(event.target) || mobileNavMenu.contains(event.target);
+        if (!isClickInside) berg();
+    }
 });
 
 document.querySelectorAll('.menu ul li a').forEach(e => {
